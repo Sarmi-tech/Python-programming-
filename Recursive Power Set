@@ -1,0 +1,11 @@
+def power_set(nums):
+    if not nums:
+        return [[]]
+    subsets_without_first = power_set(nums[1:])
+    subsets_with_first = []
+    for subset in subsets_without_first:
+        subsets_with_first.append([nums[0]] + subset)
+    return subsets_without_first + subsets_with_first
+nums = [1, 2, 3]
+result = power_set(nums)
+print(result)
