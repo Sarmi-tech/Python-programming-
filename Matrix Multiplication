@@ -1,0 +1,39 @@
+class Matrix:
+    def __init__(self, data):
+        self.data = data
+        self.rows = len(data)
+        self.cols = len(data[0])
+
+    def multiply(self, other):
+        # Check if multiplication is possible
+        if self.cols != other.rows:
+            raise ValueError("Matrix multiplication not possible")
+
+        # Create result matrix with zeros
+        result = [[0 for _ in range(other.cols)] for _ in range(self.rows)]
+
+        # Perform multiplication
+        for i in range(self.rows):
+            for j in range(other.cols):
+                for k in range(self.cols):
+                    result[i][j] += self.data[i][k] * other.data[k][j]
+
+        return Matrix(result)
+
+    def display(self):
+        for row in self.data:
+            print(row)
+
+
+# Example usage
+A = Matrix([[1, 2, 3],
+            [4, 5, 6]])
+
+B = Matrix([[7, 8],
+            [9, 10],
+            [11, 12]])
+
+C = A.multiply(B)
+
+print("Result of multiplication:")
+C.display()
