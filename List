@@ -1,0 +1,26 @@
+'''
+a = [1, 2, 3]
+b = a.copy()
+
+b.append(4)
+
+print(a)  # [1, 2, 3]
+print(b)  # [1, 2, 3, 4]
+
+nums = [1, 2, 2, 3, 2]
+print(nums.count(3))  # 3
+
+sentence = "Python is fun"
+words = sentence.split(" ")
+
+print(words)
+# ['Python', 'is', 'fun']
+'''
+a=[1,10,2]
+b=a
+c=a.copy()
+b.append(3)
+c.append(4)
+print(a)
+print(b)
+print(c)
